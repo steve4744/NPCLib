@@ -2,10 +2,10 @@
  * Copyright (c) 2018 Jitse Boonstra
  */
 
-package net.jitse.npclib.nms.v1_16_R1.packets;
+package net.jitse.npclib.nms.v1_16_R3.packets;
 
 import com.comphenix.tinyprotocol.Reflection;
-import net.minecraft.server.v1_16_R1.PacketPlayOutEntityHeadRotation;
+import net.minecraft.server.v1_16_R3.PacketPlayOutEntityHeadRotation;
 import org.bukkit.Location;
 
 /**

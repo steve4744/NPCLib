@@ -1,4 +1,4 @@
-package net.jitse.npclib.nms.v1_16_R1;
+package net.jitse.npclib.nms.v1_16_R3;
 
 import com.mojang.authlib.GameProfile;
 import com.mojang.authlib.properties.Property;
@@ -10,11 +10,11 @@ import net.jitse.npclib.api.state.NPCSlot;
 import net.jitse.npclib.hologram.Hologram;
 import net.jitse.npclib.internal.MinecraftVersion;
 import net.jitse.npclib.internal.NPCBase;
-import net.jitse.npclib.nms.v1_16_R1.packets.*;
-import net.minecraft.server.v1_16_R1.*;
+import net.jitse.npclib.nms.v1_16_R3.packets.*;
+import net.minecraft.server.v1_16_R3.*;
 import org.bukkit.Bukkit;
-import org.bukkit.craftbukkit.v1_16_R1.entity.CraftPlayer;
-import org.bukkit.craftbukkit.v1_16_R1.inventory.CraftItemStack;
+import org.bukkit.craftbukkit.v1_16_R3.entity.CraftPlayer;
+import org.bukkit.craftbukkit.v1_16_R3.inventory.CraftItemStack;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
@@ -24,7 +24,7 @@ import java.util.List;
 /**
  * @author Jitse Boonstra
  */
-public class NPC_v1_16_R1 extends NPCBase {
+public class NPC_v1_16_R3 extends NPCBase {
 
     private PacketPlayOutNamedEntitySpawn packetPlayOutNamedEntitySpawn;
     private PacketPlayOutScoreboardTeam packetPlayOutScoreboardTeamRegister;
@@ -33,7 +33,7 @@ public class NPC_v1_16_R1 extends NPCBase {
     private PacketPlayOutEntityDestroy packetPlayOutEntityDestroy;
     private PacketPlayOutAnimation packetPlayOutAnimation;
 
-    public NPC_v1_16_R1(NPCLib instance, List<String> lines) {
+    public NPC_v1_16_R3(NPCLib instance, List<String> lines) {
         super(instance, lines);
     }
 
@@ -41,7 +41,7 @@ public class NPC_v1_16_R1 extends NPCBase {
     public Hologram getPlayerHologram(Player player) {
         Hologram holo = super.getPlayerHologram(player);
         if (holo == null) {
-            holo = new Hologram(MinecraftVersion.V1_16_R1, location.clone().add(0, 0.5, 0), getPlayerLines(player));
+            holo = new Hologram(MinecraftVersion.V1_16_R3, location.clone().add(0, 0.5, 0), getPlayerLines(player));
         }
         super.textDisplayHolograms.put(player.getUniqueId(), holo);
         return holo;
@@ -120,7 +120,7 @@ public class NPC_v1_16_R1 extends NPCBase {
         EnumItemSlot nmsSlot = slot.getNmsEnum(EnumItemSlot.class);
         ItemStack item = getItem(slot);
 
-        Pair<EnumItemSlot, net.minecraft.server.v1_16_R1.ItemStack> pair = new Pair<>(nmsSlot, CraftItemStack.asNMSCopy(item));
+        Pair<EnumItemSlot, net.minecraft.server.v1_16_R3.ItemStack> pair = new Pair<>(nmsSlot, CraftItemStack.asNMSCopy(item));
         PacketPlayOutEntityEquipment packet = new PacketPlayOutEntityEquipment(entityId, Collections.singletonList(pair));
         playerConnection.sendPacket(packet);
     }

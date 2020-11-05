@@ -1,8 +1,8 @@
-package net.jitse.npclib.nms.v1_16_R1.packets;
+package net.jitse.npclib.nms.v1_16_R3.packets;
 
 import com.comphenix.tinyprotocol.Reflection;
 import net.jitse.npclib.api.state.NPCAnimation;
-import net.minecraft.server.v1_16_R1.PacketPlayOutAnimation;
+import net.minecraft.server.v1_16_R3.PacketPlayOutAnimation;
 
 public class PacketPlayOutAnimationWrapper {
 
